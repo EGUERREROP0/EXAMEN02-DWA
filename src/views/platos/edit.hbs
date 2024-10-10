@@ -1,0 +1,65 @@
+<div class="container p-4" style="margin-top:70px ;">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">ACTUALIZAR PLATO</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit-plato/{{plato.dish_id}}" method="post">
+                        <div class="input-group mt-2">
+                            <label for="name" class="input-group-text">Nombre</label>
+                            <input class="form-control" type="text" name="name" id="name" placeholder="Nombres"
+                                value="{{plato.name}}" autofocus required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="description" class="input-group-text">Description</label>
+                            <input class="form-control" type="text" name="description" id="description"
+                                value="{{plato.description}}" placeholder="Nro. DNI" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="age" class="input-group-text">Stock</label>
+                            <input class="form-control" type="number" name="stock" id="stock" placeholder="Nro. Célular"
+                                value="{{plato.stock}}" required>
+                        </div>
+                        <div class="input-group mt-2">
+                            <label for="price" class="input-group-text">Precio</label>
+                            <input class="form-control" type="number" name="price" id="price" placeholder="Apellidos"
+                                value="{{plato.price}}" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="status" class="input-group-text">Estado</label>
+                            <input class="form-control" type="text" name="status" id="status" placeholder="Nro. Célular"
+                                value="{{plato.status}}" required>
+                        </div>
+                        {{!-- <div class="input-group mt-2">
+                            <label for="dish_category_id" class="input-group-text">Categoria</label>
+                            <input class="form-control" type="number" name="dish_category_id" id="dish_category_id"
+                                placeholder="Apellidos" value="{{plato.dish_category_id}}" required>
+                        </div> --}}
+
+                        <div class="input-group mt-2">
+                            <label class="input-group-text" for="category">Categoría</label>
+                            <select class="form-control" id="category" name="dish_category_id">
+                                {{#each categorias}}
+                                <option value="{{this.dish_category_id}}">
+                                    {{this.name}}
+                                </option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success"> Actualizar</button>
+                            <button class="btn btn-danger"><a class="nav-link  link-light" aria-current="page"
+                                    href="/list"> Cancelar</a></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
